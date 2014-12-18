@@ -21,8 +21,8 @@ build/
 /rdoc/
 
 ## Environment normalisation:
-/.bundle
-/lib/bundler/man
+/.bundle/
+/lib/bundler/man/
 
 Gemfile.lock
 .ruby-version
