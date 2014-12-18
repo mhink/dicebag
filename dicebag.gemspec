@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = Dicebag::VERSION
   spec.authors       = ["Matt Hink"]
   spec.email         = ["mhink1103@gmail.com"]
-  spec.summary       = %q{D&D-style dice rolling, in Ruby}
+  spec.summary       = %q{D&D-style dice rolling micro-library}
   spec.homepage      = "https://github.com/mhink/dicebag"
   spec.license       = "MIT"
 
@@ -22,4 +22,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.6"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "rspec"
+  spec.add_development_dependency "pry"
+  spec.add_development_dependency "pry-byebug"
+
 end

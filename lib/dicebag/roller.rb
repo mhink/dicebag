@@ -2,8 +2,10 @@ module Dicebag
   class Roller
     include Enumerable
 
+    @@prng = nil
+
     def self.srand!(seed = Random.new_seed)
-      @@seed = seed
+      @@prng = Random.new(seed)
     end
 
     def self.roll_expr(dice_expression = "1d20")
@@ -20,9 +22,8 @@ module Dicebag
     end
 
     def initialize(num_rolls, num_sides)
-      Dicebag::Roller.srand! unless @@seed
+      Dicebag::Roller.srand! unless @@prng
 
-      @prng = Random.new(@@seed)
       @num_rolls = num_rolls
       @num_sides = num_sides
     end
@@ -32,7 +33,7 @@ module Dicebag
       return enum_for(:each) unless block_given?
 
       (1..@num_rolls).each do
-        yield @prng.rand(1..@num_sides)
+        yield @@prng.rand(1..@num_sides)
       end
     end
 
