@@ -64,8 +64,8 @@ Dicebag::Roller#sum returns the sum of all rolls:
 
 While Dicebag::Roller#sum_highest returns the sum of the highest N rolls.
     
-    6.times.inject([]) do |ability_scores|
-      ability_scores << 4.d(6).sum_highest(3)
+    6.times.map do
+        4.d(6).sum_highest(3)
     end
     # => [9, 13, 11, 13, 15, 14]
 
